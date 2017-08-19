@@ -1,5 +1,3 @@
-# WordPress Plugin
-
 A foundation for building standardized, organized, object-oriented Wordpress plugins by relying on the official guidelines and APIs.
 
 ## Features
