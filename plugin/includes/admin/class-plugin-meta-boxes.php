@@ -44,7 +44,7 @@ if( ! class_exists( 'Plugin_Meta_Boxes' ) ) {
 						array(
 							'id'      => 'text_field',
 							'name'    => __( 'Text Field', 'plugin' ),
-							'type'    => 'text'
+							'type'    => 'text',
 						),
 						array(
 							'id'      => 'readonly_field',
@@ -107,8 +107,9 @@ if( ! class_exists( 'Plugin_Meta_Boxes' ) ) {
 				$value = get_post_meta( $post->ID, '_' . $meta_box['id'] . '_' . $field['id'], true ); 
 				
 				// If none is set, fallback to default for readonly fields.
-				if( $value == '' && $field['type'] == 'readonly' && isset( $field['default'] ) ) {
-					$value = update_post_meta( $post->ID, '_' . $meta_box['id'] . '_' . $field['id'], $field['default'] );
+				if( empty( $value ) && isset( $field['default'] ) ) {
+					update_post_meta( $post->ID, '_' . $meta_box['id'] . '_' . $field['id'], $field['default'] );
+					$value = get_post_meta( $post->ID, '_' . $meta_box['id'] . '_' . $field['id'], true );
 				} ?>
 
 				<div class="field">

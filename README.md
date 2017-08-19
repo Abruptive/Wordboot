@@ -6,7 +6,7 @@ A foundation for building standardized, organized, object-oriented Wordpress plu
 * Documented classes, functions and variables for easy developer reference.
 * Strict file organization scheme that facilitates fast development and a scalable approach.
 * Included translation file as a starting point for internationalization.
-* Settings page with various types of fields.
+* Settings page with various types of fields (including repeater).
 * A registered custom post type, taxonomy and their templates.
 * A meta box and sample fields nativelly via the API.
 * An AJAX call boilerplate for the front-end of the site.
