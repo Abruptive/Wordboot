@@ -7,9 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * The public-facing templates of the plugin.
  *
- * @package    Plugin
- * @subpackage Plugin/public
- * @author     Plugin_Author <email@example.com>
+ * @package       Plugin
+ * @subpackage    Plugin/public
+ * @author        Plugin_Author <email@example.com>
  */
 
 if( ! class_exists( 'Plugin_Templates' ) ) {
@@ -19,7 +19,7 @@ if( ! class_exists( 'Plugin_Templates' ) ) {
 		/**
 		 * The plugin variables container.
 		 * 
-		 * @var object $plugin
+		 * @var    object    $plugin
 		 */
 		private $plugin;
 
@@ -36,16 +36,16 @@ if( ! class_exists( 'Plugin_Templates' ) ) {
 
 		/**
 		 * Assign the single item template to the post type.
+		 * 
+		 * @param     string    The default single template.
+		 * @return    string    The proper single template.
 		 */
 		public function single_template_item( $template ) {
 
-			global $post;
-	
-			if ( $post->post_type == 'item' ) {
-				$path = $this->plugin['path'] . '/templates/';
+			if ( is_singular( 'item' ) ) {
 				$name = 'single-item.php';
 				if( locate_template( $name ) == '' ) {
-					return $path . $name;
+					$template = $this->plugin['path'] . '/templates/' . $name;
 				}	
 			}
 	
@@ -55,15 +55,17 @@ if( ! class_exists( 'Plugin_Templates' ) ) {
 
 		/**
 		 * Assign the archive item template to the post type.
+		 * 
+		 * @param     string    The default archive template.
+		 * @return    string    The proper archive template.
 		 */
 		public function archive_template_item( $template ) {
-			
+
 			if ( is_post_type_archive( 'item' ) ) {
-				$path = $this->plugin['path'] . '/templates/';
 				$name = 'archive-item.php';
 				if( locate_template( array( $name ) ) == '' ) {
-					return $path . $name;
-				}	
+					$template = $this->plugin['path'] . '/templates/' . $name;
+				}
 			}
 	
 			return $template;

@@ -6,10 +6,10 @@
  * The archive post type template is used when visitors 
  * request the custom post type archive.
  *
- * @link       https://developer.wordpress.org/themes/template-files-section/custom-post-type-template-files/
- * @package    Plugin
- * @subpackage Plugin/public
- * @author     Plugin_Author <email@example.com>
+ * @link          https://developer.wordpress.org/themes/template-files-section/custom-post-type-template-files/
+ * @package       Plugin
+ * @subpackage    Plugin/public
+ * @author        Plugin_Author <email@example.com>
  */
 
 ?>

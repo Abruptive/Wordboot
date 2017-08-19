@@ -6,10 +6,10 @@
  * The single post template used when a visitor 
  * requests a single post from the custom post type.
  *
- * @link       https://developer.wordpress.org/themes/template-files-section/custom-post-type-template-files/
- * @package    Plugin
- * @subpackage Plugin/public
- * @author     Plugin_Author <email@example.com>
+ * @link          https://developer.wordpress.org/themes/template-files-section/custom-post-type-template-files/
+ * @package       Plugin
+ * @subpackage    Plugin/public
+ * @author        Plugin_Author <email@example.com>
  */
 
 ?>

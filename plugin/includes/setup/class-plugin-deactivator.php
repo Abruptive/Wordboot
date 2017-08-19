@@ -5,14 +5,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Fired during plugin deactivation.
+ * Defines all code fired during plugin deactivation.
  *
- * This class defines all code necessary to run during the plugin's deactivation.
- *
- * @since      1.0.0
- * @package    Plugin
- * @subpackage Plugin/setup
- * @author     Plugin_Author <email@example.com>
+ * @package       Plugin
+ * @subpackage    Plugin/setup
+ * @author        Plugin_Author <email@example.com>
  */
 
 if( ! class_exists( 'Plugin_Deactivator' ) ) {
@@ -20,11 +17,7 @@ if( ! class_exists( 'Plugin_Deactivator' ) ) {
 	class Plugin_Deactivator {
 
 		/**
-		 * Short Description. (use period)
-		 *
-		 * Long Description.
-		 *
-		 * @since    1.0.0
+		 * Fired during plugin deactivation.
 		 */
 		public static function deactivate() {
 

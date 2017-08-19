@@ -7,9 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Defines the custom post type(s).
  *
- * @package    Plugin
- * @subpackage Plugin/admin
- * @author     Plugin_Author <email@example.com>
+ * @package       Plugin
+ * @subpackage    Plugin/admin
+ * @author        Plugin_Author <email@example.com>
  */
 
 if( ! class_exists( 'Plugin_Post_Types' ) ) {

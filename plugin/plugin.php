@@ -24,14 +24,14 @@ if( ! class_exists( 'Plugin' ) ) {
 		/**
 		 * The plugin variables container.
 		 * 
-		 * @var object $plugin
+		 * @var    object    $plugin
 		 */
 		private $plugin;
 
 		/**
 		 * The class instance.
 		 * 
-		 * @var Plugin $instance
+		 * @var Plugin
 		 */
 		protected static $instance = null;
 

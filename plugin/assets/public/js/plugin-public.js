@@ -27,7 +27,8 @@
 			type   : 'POST',
 			data   : {
 				action  : 'callback',
-				nonce   : plugin.nonce
+				nonce   : plugin.nonce,
+				example : 'Example'
 			},
 			dataType: 'json',
 

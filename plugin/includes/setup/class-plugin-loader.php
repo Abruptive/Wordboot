@@ -11,9 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Plugin
- * @subpackage Plugin/setup
- * @author     Plugin_Author <email@example.com>
+ * @package       Plugin
+ * @subpackage    Plugin/setup
+ * @author        Plugin_Author <email@example.com>
  */
 
 if( ! class_exists( 'Plugin_Loader' ) ) {

@@ -5,11 +5,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Define the admin functionality.
+ * Defines the admin functionality.
  *
- * @package    Plugin
- * @subpackage Plugin/admin
- * @author     Plugin_Author <email@example.com>
+ * @package       Plugin
+ * @subpackage    Plugin/admin
+ * @author        Plugin_Author <email@example.com>
  */
 
 if( ! class_exists( 'Plugin_Admin' ) ) {
@@ -37,10 +37,11 @@ if( ! class_exists( 'Plugin_Admin' ) ) {
 		/**
 		 * Enqueue the admin stylesheets.
 		 *
-		 * @see https://developer.wordpress.org/reference/functions/wp_enqueue_style
+		 * @link https://developer.wordpress.org/reference/functions/wp_enqueue_style
 		 */
 		public function enqueue_styles() {
 
+			// // Enqueue and localize the admin plugin stylesheet.
 			wp_enqueue_style( $this->plugin['id'], $this->plugin['url'] . 'assets/admin/css/plugin-admin.css', array(), $this->plugin['version'], 'all' );
 
 		}
@@ -48,10 +49,11 @@ if( ! class_exists( 'Plugin_Admin' ) ) {
 		/**
 		 * Enqueue the admin scripts.
 		 * 
-		 * @see https://developer.wordpress.org/reference/functions/wp_enqueue_script
+		 * @link https://developer.wordpress.org/reference/functions/wp_enqueue_script
 		 */
 		public function enqueue_scripts() {
 
+			// // Enqueue and localize the admin plugin script.
 			wp_enqueue_script( $this->plugin['id'], $this->plugin['url'] . 'assets/admin/js/plugin-admin.js', array( 'jquery' ), $this->plugin['version'], true );
 
 		}

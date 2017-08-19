@@ -9,9 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Loads dependencies, handles translation, registers admin and public hooks.
  * 
- * @package    Plugin
- * @subpackage Plugin/includes
- * @author     Plugin_Author <email@example.com>
+ * @package       Plugin
+ * @subpackage    Plugin/includes
+ * @author        Plugin_Author <email@example.com>
  */
 
 if( ! class_exists( 'Plugin_Main' ) ) {
@@ -21,7 +21,7 @@ if( ! class_exists( 'Plugin_Main' ) ) {
 		/**
 		 * The plugin variables container.
 		 * 
-		 * @var object $plugin
+		 * @var    object    $plugin
 		 */
 		private $plugin;
 	
@@ -59,11 +59,11 @@ if( ! class_exists( 'Plugin_Main' ) ) {
 			/**
 			 * Require the plugin loader and internationalization setup classes.
 			 * 
-			 * @see    Plugin_Loader    Orchestrates the hooks of the plugin.
-			 * @see    Plugin_i18n      Defines internationalization functionality.
+			 * @see    Plugin_Loader         Orchestrates the hooks of the plugin.
+			 * @see    Plugin_Translation    Defines internationalization functionality.
 			 */
 			require_once $this->plugin['path'] . 'includes/setup/class-plugin-loader.php';
-			require_once $this->plugin['path'] . 'includes/setup/class-plugin-i18n.php';
+			require_once $this->plugin['path'] . 'includes/setup/class-plugin-translation.php';
 	
 			/**
 			 * Require the admin classes.
@@ -101,11 +101,11 @@ if( ! class_exists( 'Plugin_Main' ) ) {
 		/**
 		 * The plugin translation.
 		 * 
-		 * @see    Plugin_i18n::load_plugin_textdomain()    Load the plugin text domain for translation.
+		 * @see    Plugin_Translation::load_plugin_textdomain()    Load the plugin text domain for translation.
 		 */
 		private function define_translation() {
-			$i18n = new Plugin_i18n();
-			$this->loader->add_action( 'plugins_loaded', $i18n, 'load_plugin_textdomain' );
+			$translation = new Plugin_Translation( $this->plugin );
+			$this->loader->add_action( 'plugins_loaded', $translation, 'load_plugin_textdomain' );
 		}
 	
 		/**

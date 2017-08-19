@@ -5,14 +5,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Fired during plugin activation.
+ * Defines all code fired during plugin activation.
  *
- * This class defines all code necessary to run during the plugin's activation.
- *
- * @since      1.0.0
- * @package    Plugin
- * @subpackage Plugin/setup
- * @author     Plugin_Author <email@example.com>
+ * @package       Plugin
+ * @subpackage    Plugin/setup
+ * @author        Plugin_Author <email@example.com>
  */
  
 if( ! class_exists( 'Plugin_Activator' ) ) {
@@ -20,11 +17,7 @@ if( ! class_exists( 'Plugin_Activator' ) ) {
 	class Plugin_Activator {
 
 		/**
-		 * Short Description. (use period)
-		 *
-		 * Long Description.
-		 *
-		 * @since    1.0.0
+		 * Fired during plugin activation.
 		 */
 		public static function activate() {
 
