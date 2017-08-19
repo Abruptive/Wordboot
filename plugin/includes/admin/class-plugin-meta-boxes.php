@@ -39,7 +39,7 @@ if( ! class_exists( 'Plugin_Meta_Boxes' ) ) {
 			$this->meta_boxes = array(
 				array(
 					'id'       => 'box',
-					'title'    => __( 'Plugin Meta Box', 'plugin' ),
+					'title'    => __( 'Meta Box', 'plugin' ),
 					'fields'   => array(
 						array(
 							'id'      => 'text_field',
