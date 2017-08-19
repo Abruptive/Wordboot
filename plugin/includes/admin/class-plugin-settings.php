@@ -81,6 +81,12 @@ if( ! class_exists( 'Plugin_Settings' ) ) {
 						)
 					),
 					'default' => 'option_2'
+				),
+				array(
+					'id'          => 'example_option_repeater',
+					'name'        => 'Repeater',
+					'type'        => 'repeater',
+					'description' => 'This is an example repeater setting.'
 				)
 			);
 
@@ -168,8 +174,36 @@ if( ! class_exists( 'Plugin_Settings' ) ) {
 					return $markup;
 				break;
 
+				case 'repeater':
+					return '
+					<table class="repeater wp-list-table">
+						<tbody>
+							<tr class="repeater-template hidden">
+								<td>
+									<input type="text" data-name="' . $setting['id'] . '[]" class="regular-text" value="">
+								</td>
+								<td>
+									<button class="button" data-repeater="remove" tabindex="-1">
+										' . __( 'Remove', 'plugin' ) . '
+									</button>
+								</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="2">
+									<button class="button" data-repeater="add">
+										' . __( 'Add Item', 'plugin' ) . '
+									</button>
+								</td>
+							</tr>
+							<input type="hidden" class="repeater-data" value=' . "'" . json_encode( get_option( $setting['id'] ) ) . "'" . '>
+						</tfoot>
+					</table>';
+				break;
+
 				default: 
-					return '<input type="text" name="' . $setting['id'] . '" class="regular-text" value="' . esc_attr( get_option( $setting['id'] ) ) . '" />';
+					return '<input type="text" name="' . $setting['id'] . '" class="regular-text" value="' . esc_attr( get_option( $setting['id'] ) ) . '">';
 				break;
 
 			}

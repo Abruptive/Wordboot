@@ -1,4 +1,18 @@
-/**
- * All of the CSS for your admin-specific functionality should be
- * included in this file.
+/*
+ * Settings
  */
+
+.form-table td p {
+	margin-top: 8px;
+}
+
+.repeater {
+	width: 460px;
+	max-width: 100%;
+	background: white;
+	padding: 6px;
+}
+
+.repeater td {
+	padding: 6px 4px;
+}
