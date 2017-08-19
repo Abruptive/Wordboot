@@ -47,6 +47,4 @@ For reference, [here's a discussion](http://make.wordpress.org/themes/2013/03/04
 
 # Credits
 
-The WordPress Plugin Boilerplate was started in 2011 by [Tom McFarlin](http://twitter.com/tommcfarlin/) and has since included a number of great contributions. In March of 2015 the project was handed over by Tom to Devin Vinson. The next version of the Boilerplate was developed in conjunction with [Josh Eaton](https://twitter.com/jjeaton), [Ulrich Pogson](https://twitter.com/grapplerulrich), and [Brad Vincent](https://twitter.com/themergency).
-
-Further, this forked version of the Boilerplate is developed and maintained by [Alexandru Doda](https://alexandru.co).
+Developed and maintained by [Alexandru Doda](https://alexandru.co), the 'Wordpress Plugin' is inspired by the plugin [boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate) developed by [Devin Vinson](https://github.com/DevinVinson).
