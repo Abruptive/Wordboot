@@ -47,4 +47,4 @@ For reference, [here's a discussion](http://make.wordpress.org/themes/2013/03/04
 
 # Credits
 
-Developed and maintained by [Alexandru Doda](https://alexandru.co), the 'Wordpress Plugin' is inspired by the plugin [boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate) developed by [Devin Vinson](https://github.com/DevinVinson).
+Developed and maintained by [Alexandru Doda](https://alexandru.co), the Wordpress Plugin is inspired by the plugin [boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate) developed by [Devin Vinson](https://github.com/DevinVinson).
