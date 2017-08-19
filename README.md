@@ -12,6 +12,8 @@ A foundation for building standardized, organized, object-oriented Wordpress plu
 * An AJAX call boilerplate for the front-end of the site.
 * An example action link to the plugin settings available on the Plugins table.
 
+Learn more about the Plugin features by visiting [the official wiki](https://github.com/AlexandruDoda/Wordpress-Plugin/wiki).
+
 ## Contents
 
 The "WordPress Plugin" includes the following files:
