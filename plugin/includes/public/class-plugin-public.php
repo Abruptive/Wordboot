@@ -55,7 +55,7 @@ if( ! class_exists( 'Plugin_Public' ) ) {
 		public function enqueue_scripts() {
 
 			// Enqueue and localize the public plugin script.
-			wp_enqueue_script( $this->plugin['id'], $this->plugin['url'] . 'assets/public/js/plugin-public.js', array( 'jquery' ), $this->plugin['version'], false );
+			wp_enqueue_script( $this->plugin['id'], $this->plugin['url'] . 'assets/public/js/plugin-public.js', array( 'jquery' ), $this->plugin['version'], true );
 			wp_localize_script( $this->plugin['id'], $this->plugin['id'], array(
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
 				'nonce'    => wp_create_nonce( $this->plugin['id'] )
