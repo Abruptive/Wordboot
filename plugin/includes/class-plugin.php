@@ -71,12 +71,12 @@ if( ! class_exists( 'Plugin_Main' ) ) {
 			 * @see    Plugin_Admin         Defines all hooks for the admin area.
 			 * @see    Plugin_Settings      Defines the settings page and fields.
 			 * @see    Plugin_Post_Types    Defines the custom post types.
-			 * @see    Plugin_Meta_Boxes    Defines the custom meta boxes.
+			 * @see    Plugin_Meta          Defines the custom meta boxes.
 			 */
 			require_once $this->plugin['path'] . 'includes/admin/class-plugin-admin.php';
 			require_once $this->plugin['path'] . 'includes/admin/class-plugin-settings.php';
 			require_once $this->plugin['path'] . 'includes/admin/class-plugin-types.php';
-			require_once $this->plugin['path'] . 'includes/admin/class-plugin-meta-boxes.php';
+			require_once $this->plugin['path'] . 'includes/admin/class-plugin-meta.php';
 	
 			/**
 			 * Require the public classes.
@@ -147,13 +147,8 @@ if( ! class_exists( 'Plugin_Main' ) ) {
 
 			/**
 			 * Meta Boxes
-			 * 
-			 * @see    Plugin_Meta_Boxes::add_meta_boxes()     Register the meta boxes.
-			 * @see    Plugin_Meta_Boxes::save_meta_boxes()    Save the meta boxes.
 			 */
-			$meta_boxes = new Plugin_Meta_Boxes();
-			$this->loader->add_action( 'add_meta_boxes', $meta_boxes, 'add_meta_boxes' );
-			$this->loader->add_action( 'save_post', $meta_boxes, 'save_meta_boxes' );
+			$meta_boxes = new Plugin_Meta();
 
 		}
 	
