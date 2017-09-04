@@ -1,50 +1,25 @@
-A foundation for building standardized, organized, object-oriented Wordpress plugins by relying on the official guidelines and APIs.
+## What is _Wordboot_?
+
+Wordboot is a starter bundle used to develop standardized, organized, documented, object-oriented WordPress plugins. By following the official guidelines and APIs, the starter plugin helps you save a considerable amount time and build better WordPresss software.
 
 ## Features
 
-* Based on the official Wordpress [Plugin API](http://codex.wordpress.org/Plugin_API), [Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards), and [Documentation Standards](https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/php/).
-* Documented classes, functions and variables for easy developer reference.
+* Following the official Wordpress [Plugin API](http://codex.wordpress.org/Plugin_API), [Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards), and [Documentation Standards](https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/php/).
+* Inline documented classes, functions and variables for easy developer reference.
 * Strict file organization scheme that facilitates fast development and a scalable approach.
-* Included translation file as a starting point for internationalization.
+* Sample custom post type, taxonomy and their matching frontend templates.
+* Custom Meta Boxes using the lightweight [Metabun](https://github.com/AlexandruDoda/Metabun) class.
 * Settings page with various types of fields (including repeater).
-* A registered custom post type, taxonomy and their templates.
-* A meta box and sample fields nativelly via the API.
-* An AJAX call boilerplate for the front-end of the site.
-* An example action link to the plugin settings available on the Plugins table.
+* AJAX call boilerplate for the front-end of the site.
+* Example action link to the plugin settings available on the Plugins table.
+* Included translation file as a starting point for internationalization.
 
-Learn more about the Plugin features by visiting [the official wiki](https://github.com/AlexandruDoda/Wordpress-Plugin/wiki).
-
-## Contents
-
-The "WordPress Plugin" includes the following files:
-
-* `.gitignore`. Used to exclude certain files from the repository.
-* `CHANGELOG.md`. The list of project historical changes.
-* `README.md`. The file that you’re currently reading.
-* `plugin`. The directory that contains the source code.
+Learn more about the Plugin features by visiting [the official wiki](https://github.com/AlexandruDoda/Wordboot/wiki).
 
 ## Installation
 
-You can install the Plugin through the Wordpress admin interface or by copying the `plugin` directory to `wp-content/plugins`. Also, you must activate it from the Plugins page.
-
-## License
-
-The WordPress Plugin is licensed under the GPL v2 or later.
-
-> This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License, version 2, as published by the Free Software Foundation.
-
-> This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-> You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
-
-A copy of the license is included in the root of the plugin’s directory. The file is named `LICENSE`.
-
-## Important Notes
-
-### Licensing
-
-The Wordpress Plugin is licensed under the GPL v2 or later; however, if you opt to use third-party code that is not compatible with v2, then you may need to switch to using code that is GPL v3 compatible. For reference, [here's a discussion](http://make.wordpress.org/themes/2013/03/04/licensing-note-apache-and-gpl/) that covers the Apache 2.0 License used by [Bootstrap](http://twitter.github.io/bootstrap/).
+You can install the Plugin through the Wordpress admin interface or by copying the `wordboot` directory to `wp-content/plugins`. Also, you must activate it from the Plugins page.
 
 # Credits
 
-Developed and maintained by [Alexandru Doda](https://alexandru.co), the Wordpress Plugin is inspired by the [Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate) developed by [Devin Vinson](https://github.com/DevinVinson).
+Developed and maintained by [Alexandru Doda](https://alexandru.co), Wordboot is inspired by the [Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate) developed by [Devin Vinson](https://github.com/DevinVinson).
