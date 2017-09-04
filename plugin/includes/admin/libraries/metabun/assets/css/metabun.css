@@ -1,0 +1,82 @@
+/*
+ * The following properties are applied to custom meta boxes.
+ */
+
+.form-table td p {
+	margin-top: 0.5em;
+}
+
+
+/* Meta Box */
+
+.meta-box-sortables .hndle small {
+	padding: 0.125em 0.5em;
+	font-style: italic;
+	color: #666;
+	font-weight: 400;
+}
+
+#postbox-container-1 .meta-box-sortables .hndle small {
+	display: block;
+	margin-top: 0.5em;
+	padding: 0;
+}
+
+
+/* Field */
+
+.field:not(:last-child) {
+	margin-bottom: 1.5em;
+}
+
+.field .label {
+	margin-bottom: 0.5em;
+}
+
+.field .description {
+	margin-bottom: 1em;
+}
+
+.field input[type=radio],
+.field input[type=checkbox] {
+	margin-right: 0.5em;
+}
+
+
+/* Repeater */
+
+.field-repeater .repeater {
+	width: 100%;
+	max-width: 100%;
+	background: white;
+	padding: 6px;
+	border: 1px solid #eee;
+}
+
+.field-repeater .repeater td {
+	width: 100%;
+	padding: 6px 4px;
+}
+
+.field-repeater .repeater input {
+	width: 100%;
+}
+
+
+/* Upload */
+
+.field-file .upload img,
+.field-image .upload img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.field-file .selected {
+	display: inline-block;
+	margin: 0.4em 0.75em;
+}
+
+.field-image .remove {
+	margin-bottom: 1.5em;
+}
