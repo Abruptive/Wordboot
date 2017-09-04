@@ -20,6 +20,17 @@ Learn more about the Plugin features by visiting [the official wiki](https://git
 
 You can install the Plugin through the Wordpress admin interface or by copying the `wordboot` directory to `wp-content/plugins`. Also, you must activate it from the Plugins page.
 
+## Development
+
+The best thing about WordBoot is that you can brand it as your own plugin within less than a minute. Simply run a *case-sensitive search and replace* on your project files using your own names:
+
+* [ ] `wordboot` -> `plugin`
+* [ ] `Wordboot` -> `Plugin`,
+* [ ] `Alexandru Doda` -> `Author Name`
+* [ ] `https://alexandru.co` -> `Author URL`
+
+Also, you must rename `wordboot` to `plugin` in the file names (e.g. `includes/class-wordboot.php` would become `includes/class-plugin.php`.
+
 # Credits
 
 Developed and maintained by [Alexandru Doda](https://alexandru.co), Wordboot is inspired by the [Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate) developed by [Devin Vinson](https://github.com/DevinVinson).
