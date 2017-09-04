@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * 
  * This class adds custom meta boxes for post types.
  *
- * @version    1.0.0
+ * @version    0.5.0
  * @link       https://github.com/AlexandruDoda/Metabun
  * @author     Alexandru Doda <https://alexandru.co>
  */
@@ -73,6 +73,9 @@ if( ! class_exists( 'Metabun' ) ) {
 		 * @link https://developer.wordpress.org/reference/functions/wp_enqueue_style
 		 */
 		public function enqueue_styles() {
+
+			// Enqueue the color picker.
+			wp_enqueue_style( 'wp-color-picker');
 			
 			// Enqueue and localize the admin plugin stylesheet.
 			wp_enqueue_style( 'metabun', plugin_dir_url( __FILE__ ) . 'assets/css/metabun.css', array(), null, 'all' );
@@ -86,10 +89,13 @@ if( ! class_exists( 'Metabun' ) ) {
 		 */
 		public function enqueue_scripts() {
 
-			// Enqueue the dependencies.
+			// Enqueue the media library.
 			if ( !did_action( 'wp_enqueue_media' ) ) {
 				wp_enqueue_media();
 			}
+
+			// Enqueue the color picker.
+			wp_enqueue_script( 'wp-color-picker');
 
 			// Enqueue and localize the admin plugin script.
 			wp_enqueue_script( 'metabun', plugin_dir_url( __FILE__ ) . 'assets/js/metabun.js', array( 'jquery' ), null, true );
@@ -250,14 +256,6 @@ if( ! class_exists( 'Metabun' ) ) {
 					return $this->textarea();
 				break;
 
-				case 'image':
-					return $this->upload();
-				break;
-
-				case 'file':
-					return $this->upload();
-				break;
-
 				case 'readonly':
 					return $this->readonly();
 				break;
@@ -276,6 +274,22 @@ if( ! class_exists( 'Metabun' ) ) {
 
 				case 'radio':
 					return $this->radio();
+				break;
+
+				case 'editor':
+					return $this->editor();
+				break;
+
+				case 'image':
+					return $this->upload();
+				break;
+
+				case 'file':
+					return $this->upload();
+				break;
+
+				case 'color':
+					return $this->color();
 				break;
 
 				case 'repeater':
@@ -330,6 +344,132 @@ if( ! class_exists( 'Metabun' ) ) {
 			
 			// Return the input.
 			return '<textarea name="' . $field['id'] . '" id="' . $field['id'] . '" class="widefat">' . esc_attr( $field['value'] ) . '</textarea>';
+
+		}
+
+		/**
+		 * Field: Read-only
+		 *
+		 * @return    string    The read-only field.
+		 */
+		private function readonly() {
+
+			// Fetch the field from the class instance.
+			$field = $this->field;
+
+			// Return the input.
+			return esc_attr( $field['value'] );
+
+		}
+
+		/**
+		 * Field: Select Box
+		 *
+		 * @return    string    The select field.
+		 */
+		private function select() {
+			
+			// Fetch the field from the class instance.
+			$field = $this->field;
+			
+			// Compose the markup.
+			$markup = '<select name="' . $field['id'] . '" id="' . $field['id'] . '" class="widefat">';
+			foreach( $field['options'] as $option ) {
+				$markup .= '<option value="' . $option['id'] . '"' . selected( $field['value'], $option['id'], false ) . '>' . $option['title'] . '</option>';
+			}
+			$markup .= '</select>';
+
+			// Return the input.
+			return $markup;
+
+		}
+
+		/**
+		 * Field: Toggle
+		 *
+		 * @return    string    The toggle field.
+		 */
+		private function toggle() {
+
+			// Fetch the field from the class instance.
+			$field = $this->field;
+
+			// Compose the markup.
+			$markup  = '<input type="checkbox" name="' . $field['id'] . '[]" id="' . $field['id'] . '" value="' . $field['id'] . '"' . checked( ( in_array( $field['id'], $field['value'] ) ) ? $field['id'] : '', $field['id'], false ) . '>';
+			$markup .= '<label for="' . $field['id'] . '">' . $field['description'] . '</label>';
+
+			// Return the input.
+			return $markup;
+
+		}
+
+		/**
+		 * Field: Checkbox
+		 *
+		 * @return    string    The checkbox field.
+		 */
+		private function checkbox() {
+
+			// Fetch the field from the class instance.
+			$field = $this->field;
+
+			// Compose the markup.
+			$markup = '';
+			foreach ( $field['options'] as $option ) {
+				$markup .= '<p>';
+					$markup .= '<label>';
+						$markup .= '<input type="checkbox" name="' . $field['id'] . '[]" id="' . $field['id'] . '[' . $option['id'] . ']' . '" value="' . $option['id'] . '"' . checked( ( in_array( $option['id'], $field['value'] ) ) ? $option['id'] : '', $option['id'], false ) . '>';
+						$markup .= $option['title'];
+					$markup .= '</label>';
+				$markup .= '</p>';
+			}
+
+			// Return the input.
+			return $markup;
+
+		}
+
+		/**
+		 * Field: Radio
+		 *
+		 * @return    string    The radio field.
+		 */
+		private function radio() {
+
+			// Fetch the field from the class instance.
+			$field = $this->field;
+
+			// Compose the markup.
+			$markup = '';
+			foreach( $field['options'] as $option ) {
+				$markup .= '<p>';
+					$markup .= '<label>';
+						$markup .= '<input type="radio" name="' . $field['id'] . '" id="' . $field['id'] . '[' . $option['id'] . ']' . '" value="' . $option['id'] . '"' . checked( $field['value'], $option['id'], false ) . '>';
+						$markup .= $option['title'];
+					$markup .= '</label>';
+				$markup .= '</p>';
+			}
+
+			// Return the input.
+			return $markup;
+
+		}
+
+		/**
+		 * Field: WYSIWYG Editor
+		 *
+		 * @return    string    The editor field.
+		 */
+		private function editor() {
+
+			// Fetch the field from the class instance.
+			$field = $this->field;
+
+			// Set a default arguments array.
+			$field['args'] = isset( $field['args'] ) ? $field['args'] : array();
+
+			// Return the input.
+			return wp_editor( $field['value'], $field['id'], $field['args'] );
 
 		}
 
@@ -412,107 +552,17 @@ if( ! class_exists( 'Metabun' ) ) {
 		}
 
 		/**
-		 * Field: Read-only
+		 * Field: Color Picker
 		 *
-		 * @return    string    The read-only field.
+		 * @return    string    The color picker field.
 		 */
-		private function readonly() {
-
-			// Fetch the field from the class instance.
-			$field = $this->field;
-
-			// Return the input.
-			return esc_attr( $field['value'] );
-
-		}
-
-		/**
-		 * Field: Select Box
-		 *
-		 * @return    string    The select field.
-		 */
-		private function select() {
-
-			// Fetch the field from the class instance.
-			$field = $this->field;
+		private function color() {
 			
-			// Compose the markup.
-			$markup = '<select name="' . $field['id'] . '" id="' . $field['id'] . '" class="widefat">';
-			foreach( $field['options'] as $option ) {
-				$markup .= '<option value="' . $option['id'] . '"' . selected( $field['value'], $option['id'], false ) . '>' . $option['title'] . '</option>';
-			}
-			$markup .= '</select>';
-
-			// Return the input.
-			return $markup;
-
-		}
-
-		/**
-		 * Field: Toggle
-		 *
-		 * @return    string    The toggle field.
-		 */
-		private function toggle() {
-
 			// Fetch the field from the class instance.
 			$field = $this->field;
 
 			// Compose the markup.
-			$markup  = '<input type="checkbox" name="' . $field['id'] . '[]" id="' . $field['id'] . '" value="' . $field['id'] . '"' . checked( ( in_array( $field['id'], $field['value'] ) ) ? $field['id'] : '', $field['id'], false ) . '>';
-			$markup .= '<label for="' . $field['id'] . '">' . $field['description'] . '</label>';
-
-			// Return the input.
-			return $markup;
-
-		}
-
-		/**
-		 * Field: Checkbox
-		 *
-		 * @return    string    The checkbox field.
-		 */
-		private function checkbox() {
-
-			// Fetch the field from the class instance.
-			$field = $this->field;
-
-			// Compose the markup.
-			$markup = '';
-			foreach ( $field['options'] as $option ) {
-				$markup .= '<p>';
-					$markup .= '<label>';
-						$markup .= '<input type="checkbox" name="' . $field['id'] . '[]" id="' . $field['id'] . '[' . $option['id'] . ']' . '" value="' . $option['id'] . '"' . checked( ( in_array( $option['id'], $field['value'] ) ) ? $option['id'] : '', $option['id'], false ) . '>';
-						$markup .= $option['title'];
-					$markup .= '</label>';
-				$markup .= '</p>';
-			}
-
-			// Return the input.
-			return $markup;
-
-		}
-
-		/**
-		 * Field: Radio
-		 *
-		 * @return    string    The radio field.
-		 */
-		private function radio() {
-
-			// Fetch the field from the class instance.
-			$field = $this->field;
-
-			// Compose the markup.
-			$markup = '';
-			foreach( $field['options'] as $option ) {
-				$markup .= '<p>';
-					$markup .= '<label>';
-						$markup .= '<input type="radio" name="' . $field['id'] . '" id="' . $field['id'] . '[' . $option['id'] . ']' . '" value="' . $option['id'] . '"' . checked( $field['value'], $option['id'], false ) . '>';
-						$markup .= $option['title'];
-					$markup .= '</label>';
-				$markup .= '</p>';
-			}
+			$markup = '<input type="hidden" class="input-color" name="' . $field['id'] . '" value="' . $field['value'] . '">';
 
 			// Return the input.
 			return $markup;
