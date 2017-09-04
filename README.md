@@ -22,12 +22,12 @@ You can install the Plugin through the Wordpress admin interface or by copying t
 
 ## Development
 
-The best thing about WordBoot is that you can brand it as your own plugin within less than a minute. Simply run a *case-sensitive search and replace* on your project files using your own names:
+The best thing about WordBoot is that you can brand it as your own plugin within less than a minute. Simply run a *case-sensitive search and replace* on your project files using your own details:
 
 * [ ] `wordboot` -> `plugin`
 * [ ] `Wordboot` -> `Plugin`,
 * [ ] `Alexandru Doda` -> `Author Name`
-* [ ] `https://alexandru.co` -> `Author URL`
+* [ ] `https://alexandru.co` -> `https://example.com`
 
 Also, you must rename `wordboot` to `plugin` in the file names (e.g. `includes/class-wordboot.php` would become `includes/class-plugin.php`).
 
