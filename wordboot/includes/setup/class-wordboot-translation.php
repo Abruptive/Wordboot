@@ -7,14 +7,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define the internationalization functionality.
  * 
- * @package       Plugin
- * @subpackage    Plugin/setup
- * @author        Plugin_Author <email@example.com>
+ * @package       Wordboot
+ * @subpackage    Wordboot/setup
+ * @author        Alexandru Doda <https://alexandru.co>
  */
 
-if( ! class_exists( 'Plugin_Translation' ) ) {
+if( ! class_exists( 'Wordboot_Translation' ) ) {
 
-	class Plugin_Translation {
+	class Wordboot_Translation {
 
 		/**
 		 * The plugin variables container.
@@ -39,7 +39,7 @@ if( ! class_exists( 'Plugin_Translation' ) ) {
 		 * 
 		 * @link https://developer.wordpress.org/reference/functions/load_plugin_textdomain
 		 */
-		public function load_plugin_textdomain() {
+		public function load_textdomain() {
 
 			load_plugin_textdomain(
 				$this->plugin['id'],

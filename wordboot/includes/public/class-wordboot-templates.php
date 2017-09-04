@@ -7,14 +7,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * The public-facing templates of the plugin.
  *
- * @package       Plugin
- * @subpackage    Plugin/public
- * @author        Plugin_Author <email@example.com>
+ * @package       Wordboot
+ * @subpackage    Wordboot/public
+ * @author        Alexandru Doda <https://alexandru.co>
  */
 
-if( ! class_exists( 'Plugin_Templates' ) ) {
+if( ! class_exists( 'Wordboot_Templates' ) ) {
 
-	class Plugin_Templates {
+	class Wordboot_Templates {
 
 		/**
 		 * The plugin variables container.

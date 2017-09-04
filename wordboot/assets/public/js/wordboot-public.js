@@ -12,11 +12,11 @@
 		$.ajax( {
 
 			// Set the call parameters.
-			url    : plugin.ajax_url,
+			url    : wordboot.ajax_url,
 			type   : 'POST',
 			data   : {
 				action  : 'callback',
-				nonce   : plugin.nonce,
+				nonce   : wordboot.nonce,
 				example : 'Example'
 			},
 			dataType: 'json',

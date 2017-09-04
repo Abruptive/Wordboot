@@ -7,9 +7,9 @@
  * request the custom post type archive.
  *
  * @link          https://developer.wordpress.org/themes/template-files-section/custom-post-type-template-files/
- * @package       Plugin
- * @subpackage    Plugin/public
- * @author        Plugin_Author <email@example.com>
+ * @package       Wordboot
+ * @subpackage    Wordboot/public
+ * @author        Alexandru Doda <https://alexandru.co>
  */
 
 ?>
@@ -49,7 +49,7 @@
 		<?php else: ?>
 
 			<p>
-				<?php _e( 'Sorry, no items could be found.', 'plugin' ); ?>
+				<?php _e( 'Sorry, no items could be found.', 'wordboot' ); ?>
 			</p>
 
 		<?php endif; ?>

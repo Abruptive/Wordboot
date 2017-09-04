@@ -7,14 +7,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define the public AJAX functionality.
  *
- * @package       Plugin
- * @subpackage    Plugin/public
- * @author        Plugin_Author <email@example.com>
+ * @package       Wordboot
+ * @subpackage    Wordboot/public
+ * @author        Alexandru Doda <https://alexandru.co>
  */
 
-if( ! class_exists( 'Plugin_Ajax' ) ) {
+if( ! class_exists( 'Wordboot_Ajax' ) ) {
 
-	class Plugin_Ajax {
+	class Wordboot_Ajax {
 
 		/**
 		 * The plugin variables container.

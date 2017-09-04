@@ -7,14 +7,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Defines the admin functionality.
  *
- * @package       Plugin
- * @subpackage    Plugin/admin
- * @author        Plugin_Author <email@example.com>
+ * @package       Wordboot
+ * @subpackage    Wordboot/admin
+ * @author        Alexandru Doda <https://alexandru.co>
  */
 
-if( ! class_exists( 'Plugin_Admin' ) ) {
+if( ! class_exists( 'Wordboot_Admin' ) ) {
 
-	class Plugin_Admin {
+	class Wordboot_Admin {
 
 		/**
 		 * The plugin variables container.
@@ -41,8 +41,8 @@ if( ! class_exists( 'Plugin_Admin' ) ) {
 		 */
 		public function enqueue_styles() {
 
-			// // Enqueue and localize the admin plugin stylesheet.
-			wp_enqueue_style( $this->plugin['id'], $this->plugin['url'] . 'assets/admin/css/plugin-admin.css', array(), $this->plugin['version'], 'all' );
+			// Enqueue and localize the admin plugin stylesheet.
+			wp_enqueue_style( $this->plugin['id'], $this->plugin['url'] . 'assets/admin/css/wordboot-admin.css', array(), $this->plugin['version'], 'all' );
 
 		}
 
@@ -53,8 +53,8 @@ if( ! class_exists( 'Plugin_Admin' ) ) {
 		 */
 		public function enqueue_scripts() {
 
-			// // Enqueue and localize the admin plugin script.
-			wp_enqueue_script( $this->plugin['id'], $this->plugin['url'] . 'assets/admin/js/plugin-admin.js', array( 'jquery' ), $this->plugin['version'], true );
+			// Enqueue and localize the admin plugin script.
+			wp_enqueue_script( $this->plugin['id'], $this->plugin['url'] . 'assets/admin/js/wordboot-admin.js', array( 'jquery' ), $this->plugin['version'], true );
 
 		}
 
@@ -68,7 +68,7 @@ if( ! class_exists( 'Plugin_Admin' ) ) {
 
 			return array_merge( array( 
 				'<a href="' . admin_url( 'admin.php?page=' . $this->plugin['id'] ) . '">' . 
-					__( 'Settings', 'public' ) . 
+					__( 'Settings', 'wordboot' ) . 
 				'</a>',
 			), $actions );
 			

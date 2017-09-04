@@ -7,14 +7,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Defines the settings page.
  *
- * @package       Plugin
- * @subpackage    Plugin/admin
- * @author        Plugin_Author <email@example.com>
+ * @package       Wordboot
+ * @subpackage    Wordboot/admin
+ * @author        Alexandru Doda <https://alexandru.co>
  */
 
-if( ! class_exists( 'Plugin_Settings' ) ) {
+if( ! class_exists( 'Wordboot_Settings' ) ) {
 
-	class Plugin_Settings {
+	class Wordboot_Settings {
 
 		/**
 		 * The plugin variables container.
@@ -100,7 +100,7 @@ if( ! class_exists( 'Plugin_Settings' ) ) {
 		public function add_settings_page() {
 
 			add_menu_page( 
-				sprintf( __( '%s Settings', 'plugin' ), $this->plugin['name'] ), 
+				sprintf( __( '%s Settings', 'wordboot' ), $this->plugin['name'] ), 
 				$this->plugin['name'], 
 				'administrator', 
 				$this->plugin['id'], 
@@ -117,7 +117,7 @@ if( ! class_exists( 'Plugin_Settings' ) ) {
 
 			<div class="wrap">
 				<h1>
-					<?php printf( __( '%s Settings', 'plugin' ), $this->plugin['name'] ) ?>
+					<?php printf( __( '%s Settings', 'wordboot' ), $this->plugin['name'] ) ?>
 				</h1>
 
 				<form method="post" action="options.php">
@@ -139,7 +139,7 @@ if( ! class_exists( 'Plugin_Settings' ) ) {
 						<?php } ?>
 					</table>
 					
-					<?php submit_button( __( 'Save Changes', 'plugin' ) ); ?> &nbsp;
+					<?php submit_button( __( 'Save Changes', 'wordboot' ) ); ?> &nbsp;
 
 				</form>
 			</div>
@@ -184,7 +184,7 @@ if( ! class_exists( 'Plugin_Settings' ) ) {
 								</td>
 								<td>
 									<button class="button" data-repeater="remove" tabindex="-1">
-										' . __( 'Remove', 'plugin' ) . '
+										' . __( 'Remove', 'wordboot' ) . '
 									</button>
 								</td>
 							</tr>
@@ -193,7 +193,7 @@ if( ! class_exists( 'Plugin_Settings' ) ) {
 							<tr>
 								<td colspan="2">
 									<button class="button" data-repeater="add">
-										' . __( 'Add Item', 'plugin' ) . '
+										' . __( 'Add Item', 'wordboot' ) . '
 									</button>
 								</td>
 							</tr>

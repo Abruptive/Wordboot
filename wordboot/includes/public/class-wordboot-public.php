@@ -7,14 +7,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define the public functionality of the plugin.
  *
- * @package       Plugin
- * @subpackage    Plugin/public
- * @author        Plugin_Author <email@example.com>
+ * @package       Wordboot
+ * @subpackage    Wordboot/public
+ * @author        Alexandru Doda <https://alexandru.co>
  */
 
-if( ! class_exists( 'Plugin_Public' ) ) {
+if( ! class_exists( 'Wordboot_Public' ) ) {
 
-	class Plugin_Public {
+	class Wordboot_Public {
 
 		/**
 		 * The plugin variables container.

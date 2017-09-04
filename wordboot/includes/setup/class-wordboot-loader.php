@@ -11,14 +11,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package       Plugin
- * @subpackage    Plugin/setup
- * @author        Plugin_Author <email@example.com>
+ * @package       Wordboot
+ * @subpackage    Wordboot/setup
+ * @author        Alexandru Doda <https://alexandru.co>
  */
 
-if( ! class_exists( 'Plugin_Loader' ) ) {
+if( ! class_exists( 'Wordboot_Loader' ) ) {
 
-	class Plugin_Loader {
+	class Wordboot_Loader {
 
 		/**
 		 * The array of actions registered with WordPress.

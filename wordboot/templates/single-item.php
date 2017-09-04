@@ -7,9 +7,9 @@
  * requests a single post from the custom post type.
  *
  * @link          https://developer.wordpress.org/themes/template-files-section/custom-post-type-template-files/
- * @package       Plugin
- * @subpackage    Plugin/public
- * @author        Plugin_Author <email@example.com>
+ * @package       Wordboot
+ * @subpackage    Wordboot/public
+ * @author        Alexandru Doda <https://alexandru.co>
  */
 
 ?>
@@ -37,7 +37,7 @@
 		<?php endwhile; else: ?>
 
 			<p>
-				<?php _e( 'Sorry, your item could not be found.', 'plugin' ); ?>
+				<?php _e( 'Sorry, your item could not be found.', 'wordboot' ); ?>
 			</p>
 
 		<?php endif; ?>

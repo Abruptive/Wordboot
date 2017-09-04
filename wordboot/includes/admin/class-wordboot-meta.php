@@ -7,14 +7,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Defines the custom meta boxes.
  *
- * @package       Plugin
- * @subpackage    Plugin/admin
- * @author        Plugin_Author <email@example.com>
+ * @package       Wordboot
+ * @subpackage    Wordboot/admin
+ * @author        Alexandru Doda <https://alexandru.co>
  */
 
-if( ! class_exists( 'Plugin_Meta' ) ) {
+if( ! class_exists( 'Wordboot_Meta' ) ) {
 	
-	class Plugin_Meta {
+	class Wordboot_Meta {
 
 		/**
 		 * Construct the class.
@@ -32,17 +32,10 @@ if( ! class_exists( 'Plugin_Meta' ) ) {
 					'fields' => array(
 						array(
 							'id'          => 'text',
-							'title'       => 'Text',
+							'title'       => __( 'Text', 'wordboot' ),
 							'type'        => 'text',
 							'description' => 'This is an example text field.'
 						),
-						array(
-							'id'          => 'color',
-							'title'       => 'Color Picker',
-							'type'        => 'color',
-							'description' => 'This is an example color picker field.',
-							'default'     => '#000'
-						)
 					),
 					'context'  => 'normal',
 					'priority' => 'default'

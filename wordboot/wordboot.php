@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Plugin Name:       Plugin
- * Plugin URI:        http://example.com/plugin-uri/
- * Description:       This is a short description of the plugin and what it does.
+ * Plugin Name:       Wordboot
+ * Plugin URI:        https://wordboot.com/
+ * Description:       A set of lightweight starter files used to develop Wordpress plugins.
  * Version:           1.0.0
- * Author:            Author Name
- * Author URI:        http://example.com/
+ * Author:            Alexandru Doda
+ * Author URI:        https://alexandru.co/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       plugin
+ * Text Domain:       wordboot
  * Domain Path:       /languages
  */
 
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if( ! class_exists( 'Plugin' ) ) {
+if( ! class_exists( 'Wordboot' ) ) {
 
-	class Plugin {
+	class Wordboot {
 
 		/**
 		 * The plugin variables container.
@@ -42,8 +42,8 @@ if( ! class_exists( 'Plugin' ) ) {
 
 			// Define the plugin variables container.
 			$this->plugin = array(
-				'name'     => __( 'Plugin', 'plugin' ),
-				'id'       => 'plugin',
+				'name'     => __( 'Wordboot', 'wordboot' ),
+				'id'       => 'wordboot',
 				'version'  => '1.0.0',
 				'basename' => plugin_basename( __FILE__ ),
 				'path'     => plugin_dir_path( __FILE__ ),
@@ -64,25 +64,25 @@ if( ! class_exists( 'Plugin' ) ) {
 		/**
 		 * Set the activation hook for the plugin.
 		 * 
-		 * @see     Plugin_Activator
+		 * @see     Wordboot_Activator
 		 * @link    https://developer.wordpress.org/reference/functions/register_activation_hook/
 		 */
 
 		public function activate() {
-			require $this->plugin['path'] . 'includes/setup/class-plugin-activator.php';
-			Plugin_Activator::activate();
+			require $this->plugin['path'] . 'includes/setup/class-wordboot-activator.php';
+			Wordboot_Activator::activate();
 		}
 
 		/**
 		 * Set the deactivation hook for the plugin.
 		 * 
-		 * @see     Plugin_Deactivator
+		 * @see     Wordboot_Deactivator
 		 * @link    https://developer.wordpress.org/reference/functions/register_deactivation_hook/
 		 */
 
 		public function deactivate() {
-			require $this->plugin['path'] . 'includes/setup/class-plugin-deactivator.php';
-			Plugin_Deactivator::deactivate();
+			require $this->plugin['path'] . 'includes/setup/class-wordboot-deactivator.php';
+			Wordboot_Deactivator::deactivate();
 		}
 
 		/**
@@ -92,19 +92,19 @@ if( ! class_exists( 'Plugin' ) ) {
 		 * then kicking off the plugin from this point in the file does
 		 * not affect the page life cycle.
 		 *
-		 * @see Plugin_Main
+		 * @see Wordboot_Main
 		 */
 
 		private function run() {
-			require $this->plugin['path'] . 'includes/class-plugin.php';
-			$plugin = new Plugin_Main( $this->plugin );
+			require $this->plugin['path'] . 'includes/class-wordboot.php';
+			$plugin = new Wordboot_Main( $this->plugin );
 			$plugin->run();
 		}
 
 		/**
 		 * Get the class instance.
 		 *
-		 * @return    class    $instance    The 'Plugin' class instance, if it exists.
+		 * @return    class    $instance    The 'Wordboot' class instance, if it exists.
 		 */
 		public static function instance() {
 			if ( is_null( self::$instance ) ) {
@@ -117,4 +117,4 @@ if( ! class_exists( 'Plugin' ) ) {
 
 }
 
-return Plugin::instance();
+return Wordboot::instance();
