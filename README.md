@@ -29,7 +29,7 @@ The best thing about WordBoot is that you can brand it as your own plugin within
 * [ ] `Alexandru Doda` -> `Author Name`
 * [ ] `https://alexandru.co` -> `Author URL`
 
-Also, you must rename `wordboot` to `plugin` in the file names (e.g. `includes/class-wordboot.php` would become `includes/class-plugin.php`.
+Also, you must rename `wordboot` to `plugin` in the file names (e.g. `includes/class-wordboot.php` would become `includes/class-plugin.php`).
 
 # Credits
 
