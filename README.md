@@ -1,3 +1,5 @@
+![Cover](http://alexandru.co/wp-content/uploads/wordboot/github-cover.png)
+
 ## What is _Wordboot_?
 
 Wordboot is a starter bundle used to develop standardized, organized, documented, object-oriented WordPress plugins. By following the official guidelines and APIs, the starter plugin helps you save a considerable amount time and build better WordPresss software.
