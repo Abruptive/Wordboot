@@ -5,8 +5,8 @@
  * Plugin URI:        https://wordboot.com/
  * Description:       A set of lightweight starter files used to develop Wordpress plugins.
  * Version:           1.0.0
- * Author:            Alexandru Doda
- * Author URI:        https://alexandru.co/
+ * Author:            Abruptive
+ * Author URI:        https://abruptive.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wordboot

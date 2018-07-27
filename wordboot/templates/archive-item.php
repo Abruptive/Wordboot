@@ -9,7 +9,7 @@
  * @link          https://developer.wordpress.org/themes/template-files-section/custom-post-type-template-files/
  * @package       Wordboot
  * @subpackage    Wordboot/public
- * @author        Alexandru Doda <https://alexandru.co>
+ * @author        Abruptive <https://abruptive.com>
  */
 
 ?>

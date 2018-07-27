@@ -10,8 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * This class adds custom meta boxes for post types.
  *
  * @version    0.5.0
- * @link       https://github.com/AlexandruDoda/Metabun
- * @author     Alexandru Doda <https://alexandru.co>
+ * @link       https://github.com/Abruptive/Metabun
+ * @author     Abruptive <https://abruptive.com>
  */
 
 if( ! class_exists( 'Metabun' ) ) {

@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * 
  * @package       Wordboot
  * @subpackage    Wordboot/includes
- * @author        Alexandru Doda <https://alexandru.co>
+ * @author        Abruptive <https://abruptive.com>
  */
 
 if( ! class_exists( 'Wordboot_Main' ) ) {

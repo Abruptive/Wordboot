@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @package       Wordboot
  * @subpackage    Wordboot/admin
- * @author        Alexandru Doda <https://alexandru.co>
+ * @author        Abruptive <https://abruptive.com>
  */
 
 if( ! class_exists( 'Wordboot_Meta' ) ) {
@@ -52,7 +52,7 @@ if( ! class_exists( 'Wordboot_Meta' ) ) {
 			/**
 			 * Require the Metabun class for custom meta boxes.
 			 * 
-			 * @link https://github.com/AlexandruDoda/Metabun
+			 * @link https://github.com/Abruptive/Metabun
 			 */
 			require_once dirname( __FILE__ ) . '/libraries/metabun/class-metabun.php';
 
