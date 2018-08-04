@@ -29,7 +29,7 @@ The best thing about WordBoot is that you can brand it as your own plugin within
 * [ ] `Abruptive` -> `Author Name`
 * [ ] `https://abruptive.com` -> `https://example.com`
 
-Also, you must rename `wordboot` to `plugin` in the file names (e.g. `includes/class-wordboot.php` would become `includes/class-plugin.php`).
+Also, you must rename `wordboot` to your own namespace, e.g. `plugin` in the file names (e.g. `includes/class-wordboot.php` would become `includes/class-plugin.php`).
 
 # Credits
 
