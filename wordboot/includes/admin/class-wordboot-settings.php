@@ -97,6 +97,43 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 						'default'     => 1
 					),
 					array(
+						'id'          => 'example_option_checkbox',
+						'name'        => 'Checkbox',
+						'type'        => 'checkbox',
+						'description' => 'This is an example checkbox field.',
+						'options'     => array(
+							array(
+								'id'    => 'option_1',
+								'title' => 'Option 1',
+							),
+							array(
+								'id'    => 'option_2',
+								'title' => 'Option 2'
+							),
+							array(
+								'id'    => 'option_3',
+								'title' => 'Option 3'
+							)
+						)
+					),
+					array(
+						'id'          => 'example_option_radio',
+						'name'        => 'Radio',
+						'type'        => 'radio',
+						'description' => 'This is an example radio setting.',
+						'options'     => array(
+							array(
+								'id'    => 'option_1',
+								'title' => 'Option 1'
+							),
+							array(
+								'id'    => 'option_2',
+								'title' => 'Option 2'
+							),
+						),
+						'default' => 'option_2'
+					),
+					array(
 						'id'          => 'example_option_select',
 						'name'        => 'Select',
 						'type'        => 'select',
@@ -115,13 +152,13 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 								'name' => 'Option 3'
 							)
 						),
-						'default' => 'option_2'
+						'default' => 'option_1'
 					),
 					array(
 						'id'          => 'example_option_message',
 						'name'        => 'Message',
 						'type'        => 'message',
-						'description' => 'This is an example toggle setting.'
+						'description' => 'This is an example message.'
 					),
 					array(
 						'id'          => 'example_option_repeater',
@@ -176,7 +213,7 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 				<th scope="row"><?php echo $setting['name']; ?></th>
 				<td>
 					<?php echo $this->settings_field( $setting ); ?>
-					<?php if( isset( $setting['description'] ) && !in_array( $setting['type'], array( 'message' ) ) ) { ?>
+					<?php if( isset( $setting['description'] ) && !in_array( $setting['type'], array( 'message', 'toggle' ) ) ) { ?>
 						<p class="description"><?php echo $setting['description']; ?></p>
 					<?php } ?>
 				</td>
@@ -250,7 +287,39 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 					break;
 
 					case 'toggle':
-						return '<input type="checkbox" name="' . $setting['id'] . '" value="1"' . checked( '1', get_option( $setting['id'] ), false ) . ' />';
+						$markup  = '<label>';
+							$markup .= '<input type="checkbox" name="' . $setting['id'] . '" value="1"' . checked( '1', get_option( $setting['id'] ), false ) . ' />';
+							$markup .= $setting['description'];
+						$markup .= '</label>';
+						return $markup;
+					break;
+
+					case 'checkbox':
+						$markup = '<div>';
+						foreach ( $setting['options'] as $option ) {
+							$markup .= '<p>';
+								$markup .= '<label>';
+									$markup .= '<input type="checkbox" name="' . $setting['id'] . '[]" id="' . $setting['id'] . '[' . $option['id'] . ']' . '" value="' . $option['id'] . '"' . checked( ( in_array( $option['id'], (array)get_option( $setting['id'] ) ) ) ? $option['id'] : '', $option['id'], false ) . '>';
+									$markup .= $option['title'];
+								$markup .= '</label>';
+							$markup .= '</p>';
+						}
+						$markup .= '</div>';
+						return $markup;
+					break;
+
+					case 'radio':
+						$markup = '<div>';
+						foreach( $setting['options'] as $option ) {
+							$markup .= '<p>';
+								$markup .= '<label>';
+									$markup .= '<input type="radio" name="' . $setting['id'] . '" id="' . $setting['id'] . '[' . $option['id'] . ']' . '" value="' . $option['id'] . '"' . checked( get_option( $setting['id'] ), $option['id'], false ) . '>';
+									$markup .= $option['title'];
+								$markup .= '</label>';
+							$markup .= '</p>';
+						}
+						$markup .= '</div>';
+						return $markup;
 					break;
 
 					case 'select':
