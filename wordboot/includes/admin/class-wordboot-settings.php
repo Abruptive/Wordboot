@@ -118,6 +118,12 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 						'default' => 'option_2'
 					),
 					array(
+						'id'          => 'example_option_message',
+						'name'        => 'Message',
+						'type'        => 'message',
+						'description' => 'This is an example toggle setting.'
+					),
+					array(
 						'id'          => 'example_option_repeater',
 						'name'        => 'Repeater',
 						'type'        => 'repeater',
@@ -170,7 +176,7 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 				<th scope="row"><?php echo $setting['name']; ?></th>
 				<td>
 					<?php echo $this->settings_field( $setting ); ?>
-					<?php if( isset( $setting['description'] ) ) { ?>
+					<?php if( isset( $setting['description'] ) && !in_array( $setting['type'], array( 'message' ) ) ) { ?>
 						<p class="description"><?php echo $setting['description']; ?></p>
 					<?php } ?>
 				</td>
@@ -254,6 +260,10 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 						}
 						$markup .= '</select>';
 						return $markup;
+					break;
+
+					case 'message':
+						return '<div class="message">' . esc_html__( $setting['description'] ) . '</div>';
 					break;
 
 					case 'repeater':
