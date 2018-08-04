@@ -52,19 +52,35 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 						'default'     => 'Default Value'
 					),
 					array(
+						'id'          => 'example_option_number',
+						'name'        => 'Number',
+						'type'        => 'number',
+						'description' => 'This is an example text setting.',
+					),
+					array(
+						'id'          => 'example_option_url',
+						'name'        => 'Link',
+						'type'        => 'url',
+						'description' => 'This is an example URL setting.',
+					),
+					array(
+						'id'          => 'example_option_email',
+						'name'        => 'Email Address',
+						'type'        => 'email',
+						'description' => 'This is an example email setting.',
+					),
+					array(
+						'id'          => 'example_option_tel',
+						'name'        => 'Phone Number',
+						'type'        => 'tel',
+						'description' => 'This is an example phone setting.',
+					),
+					array(
 						'id'          => 'example_option_textarea',
 						'name'        => 'Textarea',
 						'type'        => 'textarea',
 						'description' => 'This is an example textarea setting.',
-						'default'     => 'Default Value'
-					),
-					array(
-						'id'          => 'example_option_toggle',
-						'name'        => 'Toggle',
-						'type'        => 'toggle',
-						'description' => 'This is an example toggle setting.',
-						'default'     => 1
-					),
+					)
 				)
 			);
 
@@ -73,6 +89,13 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 				'title'    => 'Advanced',
 				'id'       => 'advanced',
 				'settings' => array(
+					array(
+						'id'          => 'example_option_toggle',
+						'name'        => 'Toggle',
+						'type'        => 'toggle',
+						'description' => 'This is an example toggle setting.',
+						'default'     => 1
+					),
 					array(
 						'id'          => 'example_option_select',
 						'name'        => 'Select',
@@ -206,60 +229,66 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 		 */
 		public function settings_field( $setting ) {
 
-			switch( $setting['type'] ) {
+			$type = $setting['type'];
 
-				case 'text':
-					return '<input type="text" name="' . $setting['id'] . '" class="regular-text" value="' . esc_attr( get_option( $setting['id'] ) ) . '" />';
-				break;
+			if( in_array( $type, array( 'text', 'number', 'url', 'tel', 'email' ) ) ){
 
-				case 'textarea':
-					return '<textarea name="' . $setting['id'] . '" class="regular-text" rows="3">' . esc_attr( get_option( $setting['id'] ) ) . '</textarea>';
-				break;
+				return '<input type="' . $type . '" name="' . $setting['id'] . '" class="regular-text" value="' . esc_attr( get_option( $setting['id'] ) ) . '" />';
 
-				case 'toggle':
-					return '<input type="checkbox" name="' . $setting['id'] . '" value="1"' . checked( '1', get_option( $setting['id'] ), false ) . ' />';
-				break;
+			} else {
 
-				case 'select':
-					$markup = '<select name="' . $setting['id'] . '">';
-					foreach( $setting['options'] as $option ) {
-						$markup .= '<option value="' . $option['id'] . '"' . selected( get_option( $setting['id'] ), $option['id'], false ) . '>' . $option['name'] . '</option>';
-					}
-					$markup .= '</select>';
-					return $markup;
-				break;
+				switch( $setting['type'] ) {
 
-				case 'repeater':
-					return '
-					<table class="repeater wp-list-table">
-						<tbody>
-							<tr class="repeater-template hidden">
-								<td>
-									<input type="text" data-name="' . $setting['id'] . '[]" class="regular-text" value="">
-								</td>
-								<td>
-									<button class="button" data-repeater="remove" tabindex="-1">
-										' . __( 'Remove', 'wordboot' ) . '
-									</button>
-								</td>
-							</tr>
-						</tbody>
-						<tfoot>
-							<tr>
-								<td colspan="2">
-									<button class="button" data-repeater="add">
-										' . __( 'Add Item', 'wordboot' ) . '
-									</button>
-								</td>
-							</tr>
-							<input type="hidden" class="repeater-data" value=' . "'" . json_encode( get_option( $setting['id'] ) ) . "'" . '>
-						</tfoot>
-					</table>';
-				break;
+					case 'textarea':
+						return '<textarea name="' . $setting['id'] . '" class="regular-text" rows="3">' . esc_attr( get_option( $setting['id'] ) ) . '</textarea>';
+					break;
 
-				default: 
-					return '<input type="text" name="' . $setting['id'] . '" class="regular-text" value="' . esc_attr( get_option( $setting['id'] ) ) . '">';
-				break;
+					case 'toggle':
+						return '<input type="checkbox" name="' . $setting['id'] . '" value="1"' . checked( '1', get_option( $setting['id'] ), false ) . ' />';
+					break;
+
+					case 'select':
+						$markup = '<select name="' . $setting['id'] . '">';
+						foreach( $setting['options'] as $option ) {
+							$markup .= '<option value="' . $option['id'] . '"' . selected( get_option( $setting['id'] ), $option['id'], false ) . '>' . $option['name'] . '</option>';
+						}
+						$markup .= '</select>';
+						return $markup;
+					break;
+
+					case 'repeater':
+						return '
+						<table class="repeater wp-list-table">
+							<tbody>
+								<tr class="repeater-template hidden">
+									<td>
+										<input type="text" data-name="' . $setting['id'] . '[]" class="regular-text" value="">
+									</td>
+									<td>
+										<button class="button" data-repeater="remove" tabindex="-1">
+											' . __( 'Remove', 'wordboot' ) . '
+										</button>
+									</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="2">
+										<button class="button" data-repeater="add">
+											' . __( 'Add Item', 'wordboot' ) . '
+										</button>
+									</td>
+								</tr>
+								<input type="hidden" class="repeater-data" value=' . "'" . json_encode( get_option( $setting['id'] ) ) . "'" . '>
+							</tfoot>
+						</table>';
+					break;
+
+					default: 
+						return '<input type="text" name="' . $setting['id'] . '" class="regular-text" value="' . esc_attr( get_option( $setting['id'] ) ) . '">';
+					break;
+
+				}
 
 			}
 
