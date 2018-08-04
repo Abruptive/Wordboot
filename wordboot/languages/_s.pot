@@ -1,0 +1,282 @@
+# Copyright (C) 2018 Abruptive
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wordboot 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordboot\n"
+"POT-Creation-Date: 2018-08-04 05:16:17+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n1.0.2\n"
+
+#: includes/admin/class-wordboot-admin.php:71
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/class-wordboot-meta.php:35
+msgid "Text"
+msgstr ""
+
+#: includes/admin/class-wordboot-settings.php:103
+#: includes/admin/class-wordboot-settings.php:120
+msgid "%s Settings"
+msgstr ""
+
+#: includes/admin/class-wordboot-settings.php:142
+msgid "Save Changes"
+msgstr ""
+
+#: includes/admin/class-wordboot-settings.php:187
+#: includes/admin/libraries/metabun/class-metabun.php:592
+msgid "Remove"
+msgstr ""
+
+#: includes/admin/class-wordboot-settings.php:196
+#: includes/admin/libraries/metabun/class-metabun.php:601
+msgid "Add Item"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:29
+msgid "Items"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:30
+msgid "Item"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:31
+msgid "Item Archives"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:32
+msgid "Item Attributes"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:33
+msgid "Parent Item:"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:34
+msgid "All Items"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:35
+msgid "Add New Item"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:36
+msgid "Add New"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:37
+msgid "New Item"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:38
+msgid "Edit Item"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:39
+msgid "Update Item"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:40
+msgid "View Item"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:41
+msgid "View Items"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:42
+msgid "Search Item"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:43
+msgid "Not found"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:44
+msgid "Not found in Trash"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:45
+msgid "Featured Image"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:46
+msgid "Set featured image"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:47
+msgid "Remove featured image"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:48
+msgid "Use as featured image"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:49
+msgid "Insert into item"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:50
+msgid "Uploaded to this item"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:51
+msgid "Items list"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:52
+msgid "Items list navigation"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:53
+msgid "Filter items list"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:70
+msgid "Item Description"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:108
+msgid "Categories"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:109
+msgid "All Categories"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:110
+msgid "Edit Category"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:111
+msgid "View Tag"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:112
+msgid "Update Category"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:113
+msgid "Add New Category"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:114
+msgid "New Category Name"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:115
+msgid "Parent Category"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:116
+msgid "Parent Category:"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:117
+msgid "Search Categories"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:118
+msgid "Popular Categories"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:119
+msgid "Separate Categories with commas"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:120
+msgid "Add or remove Categories"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:121
+msgid "Choose from the most used Categories"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:122
+msgid "No Categories found."
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:136
+msgid "Category Description"
+msgstr ""
+
+#: includes/admin/libraries/metabun/class-metabun.php:497
+msgid "Select File"
+msgstr ""
+
+#: includes/admin/libraries/metabun/class-metabun.php:498
+msgid "Remove File"
+msgstr ""
+
+#: includes/admin/libraries/metabun/class-metabun.php:518
+msgid "Select Image"
+msgstr ""
+
+#: includes/admin/libraries/metabun/class-metabun.php:519
+msgid "Remove Image"
+msgstr ""
+
+#: includes/admin/libraries/metabun/class-metabun.php:651
+#: includes/admin/libraries/metabun/class-metabun.php:692
+msgid "No %s could be found in the database."
+msgstr ""
+
+#: includes/admin/libraries/metabun/class-metabun.php:699
+msgid "A taxonomy identified with \"%s\" does not exist."
+msgstr ""
+
+#: templates/archive-item.php:52
+msgid "Sorry, no items could be found."
+msgstr ""
+
+#: templates/single-item.php:40
+msgid "Sorry, your item could not be found."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Wordboot"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordboot.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Lightweight WordPress Starter Plugin"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Abruptive"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://abruptive.com/"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:27
+msgctxt "Post Type General Name"
+msgid "Items"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:28
+msgctxt "Post Type Singular Name"
+msgid "Item"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:106
+msgctxt "Taxonomy General Name"
+msgid "Categories"
+msgstr ""
+
+#: includes/admin/class-wordboot-types.php:107
+msgctxt "Taxonomy Singular Name"
+msgid "Category"
+msgstr ""

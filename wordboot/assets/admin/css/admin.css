@@ -1,0 +1,35 @@
+/*! 
+ * wordboot 
+ * 
+ * Version: 1.0.0 
+ * Author: Abruptive 
+ * Author URL: https://abruptive.com 
+ * Build Date: 2018-08-03 
+ */
+
+/*
+ * Settings
+ */
+
+body {
+    transition: 200ms;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+.form-table td p {
+    margin-top: 1rem;
+}
+
+.repeater {
+    width: 460px;
+    max-width: 100%;
+    background: white;
+    padding: 6px;
+}
+
+.repeater td {
+    padding: 6px 4px;
+}
+
+/*# sourceMappingURL=admin.css.map */

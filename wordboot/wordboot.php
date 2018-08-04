@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       Wordboot
  * Plugin URI:        https://wordboot.com/
- * Description:       A set of lightweight starter files used to develop Wordpress plugins.
+ * Description:       Lightweight WordPress Starter Plugin
  * Version:           1.0.0
  * Author:            Abruptive
  * Author URI:        https://abruptive.com/
@@ -92,7 +92,7 @@ if( ! class_exists( 'Wordboot' ) ) {
 		 * then kicking off the plugin from this point in the file does
 		 * not affect the page life cycle.
 		 *
-		 * @see Wordboot_Main
+		 * @see 	Wordboot_Main
 		 */
 
 		private function run() {

@@ -2,8 +2,14 @@
  * Settings
  */
 
+body {
+	transition: 200ms;
+	box-shadow: none;
+	box-sizing: border-box
+}
+
 .form-table td p {
-	margin-top: 8px;
+	margin-top: 1rem;
 }
 
 .repeater {
@@ -11,8 +17,7 @@
 	max-width: 100%;
 	background: white;
 	padding: 6px;
-}
-
-.repeater td {
-	padding: 6px 4px;
+	td {
+		padding: 6px 4px;
+	}
 }

@@ -1,3 +1,5 @@
+/* globals wordboot */
+
 (function( $ ) {
 	'use strict';
 
