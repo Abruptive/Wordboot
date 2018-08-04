@@ -28,7 +28,7 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 		 *
 		 * @var    array    $settings
 		 */
-		private $settings;
+		private $settings = array();
 
 		/**
 		 * Construct the class.
@@ -39,54 +39,67 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 
 			$this->plugin = $plugin;
 
-			$this->settings = array(
-				array(
-					'id'          => 'example_option_text',
-					'name'        => 'Text',
-					'type'        => 'text',
-					'description' => 'This is an example text setting.',
-					'default'     => 'Default Value'
-				),
-				array(
-					'id'          => 'example_option_textarea',
-					'name'        => 'Textarea',
-					'type'        => 'textarea',
-					'description' => 'This is an example textarea setting.',
-					'default'     => 'Default Value'
-				),
-				array(
-					'id'          => 'example_option_toggle',
-					'name'        => 'Toggle',
-					'type'        => 'toggle',
-					'description' => 'This is an example toggle setting.',
-					'default'     => 1
-				),
-				array(
-					'id'          => 'example_option_select',
-					'name'        => 'Select',
-					'type'        => 'select',
-					'description' => 'This is an example select setting.',
-					'options'     => array(
-						array(
-							'id'   => 'option_1',
-							'name' => 'Option 1'
-						),
-						array(
-							'id'   => 'option_2',
-							'name' => 'Option 2'
-						),
-						array(
-							'id'   => 'option_3',
-							'name' => 'Option 3'
-						)
+			// General
+			$this->settings[] = array(
+				'title'    => 'General',
+				'id'       => 'general',
+				'settings' => array(
+					array(
+						'id'          => 'example_option_text',
+						'name'        => 'Text',
+						'type'        => 'text',
+						'description' => 'This is an example text setting.',
+						'default'     => 'Default Value'
 					),
-					'default' => 'option_2'
-				),
-				array(
-					'id'          => 'example_option_repeater',
-					'name'        => 'Repeater',
-					'type'        => 'repeater',
-					'description' => 'This is an example repeater setting.'
+					array(
+						'id'          => 'example_option_textarea',
+						'name'        => 'Textarea',
+						'type'        => 'textarea',
+						'description' => 'This is an example textarea setting.',
+						'default'     => 'Default Value'
+					),
+					array(
+						'id'          => 'example_option_toggle',
+						'name'        => 'Toggle',
+						'type'        => 'toggle',
+						'description' => 'This is an example toggle setting.',
+						'default'     => 1
+					),
+				)
+			);
+
+			// Advanced
+			$this->settings[] = array(
+				'title'    => 'Advanced',
+				'id'       => 'advanced',
+				'settings' => array(
+					array(
+						'id'          => 'example_option_select',
+						'name'        => 'Select',
+						'type'        => 'select',
+						'description' => 'This is an example select setting.',
+						'options'     => array(
+							array(
+								'id'   => 'option_1',
+								'name' => 'Option 1'
+							),
+							array(
+								'id'   => 'option_2',
+								'name' => 'Option 2'
+							),
+							array(
+								'id'   => 'option_3',
+								'name' => 'Option 3'
+							)
+						),
+						'default' => 'option_2'
+					),
+					array(
+						'id'          => 'example_option_repeater',
+						'name'        => 'Repeater',
+						'type'        => 'repeater',
+						'description' => 'This is an example repeater setting.'
+					)
 				)
 			);
 
@@ -103,12 +116,44 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 				sprintf( __( '%s Settings', 'wordboot' ), $this->plugin['name'] ), 
 				$this->plugin['name'], 
 				'administrator', 
-				$this->plugin['id'], 
+				$this->plugin['id'],
 				array( $this, 'settings_page' ), 
 				'dashicons-marker' 
 			);
 
 		}
+
+		/**
+		 * Markup for tabs.
+		 */
+		public function display_tabs( $active ) { ?>
+
+			<nav class="nav-tab-wrapper">
+				<?php foreach( $this->settings as $tab ){ ?>
+					<a href="<?php echo admin_url( 'admin.php?page=wordboot&tab=' . $tab['id'] ); ?>" class="nav-tab <?php echo $tab['id'] !== $active ?: 'nav-tab-active'; ?> nav-tab--<?php echo $tab['id']; ?>">
+						<?php echo $tab['title']; ?>
+					</a>
+				<?php } ?>
+			</nav>
+
+		<?php }
+
+		/**
+		 * Markup for an individual setting.
+		 */
+		public function display_setting( $setting ) { ?>
+
+			<tr valign="top">
+				<th scope="row"><?php echo $setting['name']; ?></th>
+				<td>
+					<?php echo $this->settings_field( $setting ); ?>
+					<?php if( isset( $setting['description'] ) ) { ?>
+						<p class="description"><?php echo $setting['description']; ?></p>
+					<?php } ?>
+				</td>
+			</tr>
+				
+		<?php }
 
 		/**
 		 * Create the plugin settings page.
@@ -122,21 +167,31 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 
 				<form method="post" action="options.php">
 
-					<?php settings_fields( $this->plugin['id'] . '-settings-group' ); ?>
-					<?php do_settings_sections( $this->plugin['id'] . '-settings-group' ); ?>
+					<?php foreach( $this->settings as $tab ) {
+						settings_fields( $this->plugin['id'] . '_' . $tab['id'] );
+						do_settings_sections( $this->plugin['id'] . '_' . $tab['id'] );
+					} ?>
 
 					<table class="form-table">
-						<?php foreach( $this->settings as $setting ) { ?>
-							<tr valign="top">
-								<th scope="row"><?php echo $setting['name']; ?></th>
-								<td>
-									<?php echo $this->settings_field( $setting ); ?>
-									<?php if( isset( $setting['description'] ) ) { ?>
-										<p class="description"><?php echo $setting['description']; ?></p>
-									<?php } ?>
-								</td>
-							</tr>
-						<?php } ?>
+
+						<?php if( isset( $_GET['tab'] ) ) {
+							$active = $_GET['tab'];
+						} else {
+							$active = $this->settings[0]['id'];
+						}
+
+						if( count( $this->settings ) > 1 ) {
+							$this->display_tabs( $active );
+						}
+
+						foreach( $this->settings as $tab ){
+							if( $tab['id'] === $active ) {
+								foreach( $tab['settings'] as $setting ) {
+									$this->display_setting( $setting );
+								}
+							}
+						} ?>
+
 					</table>
 					
 					<?php submit_button( __( 'Save Changes', 'wordboot' ) ); ?> &nbsp;
@@ -216,16 +271,20 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 		 * @link https://developer.wordpress.org/reference/functions/register_setting
 		 */ 
 		public function add_settings() {
-			
-			foreach( $this->settings as $setting ) {
 
-				$args = array();
+			foreach( $this->settings as $tab ) {
 
-				if( isset( $setting['default'] ) ) {
-					$args['default'] = $setting['default'];
+				foreach( $tab['settings'] as $setting ) {
+
+					$args = array();
+
+					if( isset( $setting['default'] ) ) {
+						$args['default'] = $setting['default'];
+					}
+
+					register_setting( $this->plugin['id'] . '_' . $tab['id'], $setting['id'], $args );
+
 				}
-
-				register_setting( $this->plugin['id'] . '-settings-group', $setting['id'], $args );
 
 			}
 
