@@ -42,7 +42,7 @@ if( ! class_exists( 'Wordboot_Admin' ) ) {
 		public function enqueue_styles() {
 
 			// Enqueue and localize the admin plugin stylesheet.
-			wp_enqueue_style( $this->plugin['id'], $this->plugin['url'] . 'assets/admin/css/wordboot-admin.css', array(), $this->plugin['version'], 'all' );
+			wp_enqueue_style( $this->plugin['id'], $this->plugin['url'] . 'assets/admin/css/admin.min.css', array(), $this->plugin['version'], 'all' );
 
 		}
 
@@ -54,7 +54,7 @@ if( ! class_exists( 'Wordboot_Admin' ) ) {
 		public function enqueue_scripts() {
 
 			// Enqueue and localize the admin plugin script.
-			wp_enqueue_script( $this->plugin['id'], $this->plugin['url'] . 'assets/admin/js/wordboot-admin.js', array( 'jquery' ), $this->plugin['version'], true );
+			wp_enqueue_script( $this->plugin['id'], $this->plugin['url'] . 'assets/admin/js/admin.min.js', array( 'jquery' ), $this->plugin['version'], true );
 
 		}
 

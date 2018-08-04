@@ -42,7 +42,7 @@ if( ! class_exists( 'Wordboot_Public' ) ) {
 		public function enqueue_styles() {
 
 			// Enqueue and localize the public plugin script.
-			wp_enqueue_style( $this->plugin['id'], $this->plugin['url'] . 'assets/public/css/plugin-public.css', array(), $this->plugin['version'], 'all' );
+			wp_enqueue_style( $this->plugin['id'], $this->plugin['url'] . 'assets/public/css/public.min.css', array(), $this->plugin['version'], 'all' );
 
 		}
 
@@ -55,7 +55,7 @@ if( ! class_exists( 'Wordboot_Public' ) ) {
 		public function enqueue_scripts() {
 
 			// Enqueue and localize the public plugin script.
-			wp_enqueue_script( $this->plugin['id'], $this->plugin['url'] . 'assets/public/js/plugin-public.js', array( 'jquery' ), $this->plugin['version'], true );
+			wp_enqueue_script( $this->plugin['id'], $this->plugin['url'] . 'assets/public/js/public.min.js', array( 'jquery' ), $this->plugin['version'], true );
 			wp_localize_script( $this->plugin['id'], $this->plugin['id'], array(
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
 				'nonce'    => wp_create_nonce( $this->plugin['id'] )
