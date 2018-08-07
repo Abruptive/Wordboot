@@ -274,7 +274,7 @@ if( ! class_exists( 'Wordboot_Settings' ) ) {
 
 			$type = $setting['type'];
 
-			if( in_array( $type, array( 'text', 'number', 'url', 'tel', 'email' ) ) ){
+			if( in_array( $type, array( 'text', 'number', 'url', 'tel', 'email', 'password' ) ) ){
 
 				return '<input type="' . $type . '" name="' . $setting['id'] . '" class="regular-text" value="' . esc_attr( get_option( $setting['id'] ) ) . '" />';
 
